@@ -15,7 +15,6 @@ var port = process.env.PORT || 3000;
 // set environment
 global.env                  = process.env.NODE_ENV || 'development';
 global.app                  = app;
-global.httpStatusCodes      = require('./lib/helpers/http-status-codes')
 
 // ROUTES FOR OUR API
 // =============================================================================

@@ -4,5 +4,5 @@ var controllers = require('./controllers');
 
 module.exports = router;
 router.post('/open',controllers.openDoor);
-//router.get('/autoOpen',controllers.autoOpenStatus);
-//router.post('/autoOpen',controllers.autoOpen);
+router.get('/auto_open',controllers.autoOpenStatus);
+router.post('/auto_open',controllers.autoOpen);
