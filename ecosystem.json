@@ -1,37 +1,25 @@
 {
   "apps" : [
     {
-      "name"      : "pushtech-metrics-api",
+      "name"      : "wayna-bell-api",
       "script"    : "server.js",
       "env": {
         "COMMON_VARIABLE": "true"
       },
       "env_production" : {
         "NODE_ENV": "production",
-        "PORT": "7001"
-      },
-      "env_dev" : {
-        "NODE_ENV": "dev",
-        "PORT": "7001"
+        "PORT": "3000"
       }
     }
   ],
   "deploy" : {
-    "production" : {
-      "user" : "deployer",
-      "host" : [ "10.10.51.4", "10.10.52.4" ],
+    "rpi" : {
+      "user" : "pi",
+      "host" : [ "192.168.1.34" ],
       "ref"  : "origin/master",
-      "repo" : "git@github.com:gerardpeiro/pushtech-metrics-api.git",
-      "path" : "/home/deployer/apps/pushtech-metrics-api",
+      "repo" : "git@github.com:NewTechHack/WaynaBell-API.git",
+      "path" : "/app/wayna-bell-api",
       "post-deploy" : "npm install --production --force && sudo pm2 startOrRestart ecosystem.json --env production"
-    },
-    "dev" : {
-      "user" : "deployer",
-      "host" : "10.16.1.4",
-      "ref"  : "origin/develop",
-      "repo" : "git@github.com:gerardpeiro/pushtech-metrics-api.git",
-      "path" : "/home/deployer/apps/pushtech-metrics-api",
-      "post-deploy" : "npm install --force && sudo pm2 startOrRestart ecosystem.json --env dev"
     }
   }
 }
