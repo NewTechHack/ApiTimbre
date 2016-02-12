@@ -46,5 +46,5 @@ app.use('/docs',authMiddleware,express.static(__dirname + '/docs'));
 
 
 http.listen(port, function() {
-  console.log("Wayna well api " running on http://localhost:" + port);
+  console.log("Wayna well api  running on http://localhost:" + port);
 });
