@@ -1,0 +1,37 @@
+{
+  "apps" : [
+    {
+      "name"      : "pushtech-metrics-api",
+      "script"    : "server.js",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production" : {
+        "NODE_ENV": "production",
+        "PORT": "7001"
+      },
+      "env_dev" : {
+        "NODE_ENV": "dev",
+        "PORT": "7001"
+      }
+    }
+  ],
+  "deploy" : {
+    "production" : {
+      "user" : "deployer",
+      "host" : [ "10.10.51.4", "10.10.52.4" ],
+      "ref"  : "origin/master",
+      "repo" : "git@github.com:gerardpeiro/pushtech-metrics-api.git",
+      "path" : "/home/deployer/apps/pushtech-metrics-api",
+      "post-deploy" : "npm install --production --force && sudo pm2 startOrRestart ecosystem.json --env production"
+    },
+    "dev" : {
+      "user" : "deployer",
+      "host" : "10.16.1.4",
+      "ref"  : "origin/develop",
+      "repo" : "git@github.com:gerardpeiro/pushtech-metrics-api.git",
+      "path" : "/home/deployer/apps/pushtech-metrics-api",
+      "post-deploy" : "npm install --force && sudo pm2 startOrRestart ecosystem.json --env dev"
+    }
+  }
+}
