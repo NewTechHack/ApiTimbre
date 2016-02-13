@@ -9,6 +9,7 @@ var app = express();
 var http = require('http').Server(app);
 var auth = require('http-auth');
 var gpio = require('pi-gpio');
+var io = require('socket.io').listen(app);
 
 
 // set our port
@@ -49,3 +50,4 @@ app.use('/docs',authMiddleware,express.static(__dirname + '/docs'));
 http.listen(port, function() {
   console.log("Wayna well api  running on http://localhost:" + port);
 });
+require('./socketIoManager')(io);
