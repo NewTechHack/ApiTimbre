@@ -1,5 +1,11 @@
 # WaynaBell-API
 
+Deploy:
+
+sudo pm2 deploy rpi
+
+info:
+
 Unir negro con amarillo abre puerta
 
 negro y rojo -> timbre
