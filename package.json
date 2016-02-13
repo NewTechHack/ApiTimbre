@@ -1,7 +1,7 @@
 {
   "name": "wayna-bell-api",
   "version": "0.1.0",
-  "description": "Wayna bell api", 
+  "description": "Wayna bell api",
   "private": true,
   "author": "Crostian",
   "repository": {
@@ -10,13 +10,14 @@
   },
   "readmeFilename": "README.md",
   "dependencies": {
-    "express": "^4.8.3",
-    "method-override": "^2.1.2",
+    "apidoc": "0.12.3",
     "body-parser": "^1.5.1",
     "errorhandler": "1.1.1",
-    "apidoc":"0.12.3",
-    "http-auth":"2.2.5",
-    "pi-gpio":"0.0.8"
+    "express": "^4.8.3",
+    "http-auth": "2.2.5",
+    "method-override": "^2.1.2",
+    "pi-gpio": "0.0.8",
+    "socket.io": "^1.4.5"
   },
   "scripts": {
     "start": "node server"
@@ -25,6 +26,6 @@
     "name": "Wayna bell api reference",
     "version": "1.0.0",
     "title": "Wayna bell api reference",
-    "url" : ""
+    "url": ""
   }
 }
