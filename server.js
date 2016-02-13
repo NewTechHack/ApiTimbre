@@ -8,6 +8,8 @@ var express = require("express");
 var app = express();
 var http = require('http').Server(app);
 var auth = require('http-auth');
+var gpio = require('pi-gpio');
+
 
 // set our port
 var port = process.env.PORT || 3000;

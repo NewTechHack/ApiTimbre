@@ -1,5 +1,5 @@
 var gpio = require('pi-gpio');
-var CHANNEL_RELE = 3;
+var CHANNEL_RELE = 11;
 var autopen = false;
 
 function checkAuthorization(token){
@@ -32,7 +32,7 @@ function autoOpenStatus (req,res,next){
 }
 function autoOpen(req,res,next){
   if(checkAuthorization(req.headers.authorization)){
-    autopen = !autopen;
+    autopen = req.body.auto_open;
     res.writeHead(200, {"Content-Type": "application/json"});
     res.end(JSON.stringify({auto_open:autopen}));
   }else{
