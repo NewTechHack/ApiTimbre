@@ -1,4 +1,4 @@
-//var gpio = require('pi-gpio');
+var gpio = require('pi-gpio');
 var CHANNEL_RELE = 3;
 var autopen = false;
 
@@ -9,10 +9,10 @@ function checkAuthorization(token){
 function openDoor(req,res,next){
   if(checkAuthorization(req.headers.authorization)){
     //START BELL
-    //gpio.write(CHANNEL_RELE, true);
+    gpio.write(CHANNEL_RELE, true);
     setInterval(function(){
        //STOP BELL
-       //gpio.write(CHANNEL_RELE, false);
+       gpio.write(CHANNEL_RELE, false);
     }, 5000); // 5 segundos
     res.status(200).send();
 
