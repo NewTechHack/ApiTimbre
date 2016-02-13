@@ -8,3 +8,6 @@ http://www.golmar.es/Usuarios/98FEE1/archivos/Catalogo/PorteroVideoportero/KitsP
 
 
 http://www.rakeshmondal.info/IC-7805-Voltage-Regulator
+
+
+https://learn.adafruit.com/reading-a-analog-in-and-controlling-audio-volume-with-the-raspberry-pi/overview
